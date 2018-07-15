@@ -1,0 +1,6 @@
+create table amigos(CodAm int primary key AUTO_INCREMENT, usua_enviador int, usua_receptor int, status bit, solicitud bit, FOREIGN KEY(usua_enviador) REFERENCES usuarios(CodUsua), FOREIGN KEY(usua_receptor) REFERENCES usuarios(CodUsua))
+create table notificaciones(CodNot int primary key AUTO_INCREMENT, accion bit, visto bit, CodPost int, CodUsua int, FOREIGN KEY(CodUsua) REFERENCES usuarios(CodUsua))
+create table post(CodPost int primary key auto_increment, contenido text, img varchar(200), CodUsua int, FOREIGN KEY(CodUsua) REFERENCES usuarios(CodUsua))
+alter table notificaciones add CONSTRAINT fk_post FOREIGN KEY(CodPost) REFERENCES post(CodPost)
+create table mg(CodLike int primary key AUTO_INCREMENT, CodPost int, CodUsua int, FOREIGN KEY(CodUsua) REFERENCES usuarios(CodUsua), FOREIGN KEY(CodPost) REFERENCES post(CodPost))
+create table comentarios(CodCom int primary key auto_increment, comentario text, CodPost int, CodUsua int, FOREIGN KEY(CodUsua) REFERENCES usuarios(CodUsua), FOREIGN KEY(CodPost) REFERENCES post(CodPost))

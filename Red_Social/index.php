@@ -24,14 +24,14 @@
 		if(!empty($_POST['comentario'])){
 			comentarios::agregar($_POST['comentario'], $_SESSION['CodUsua'], $_POST['CodPost']);
 			notificaciones::agregar(1, $_POST['CodPost'], $_SESSION['CodUsua']);
-			header('location: index.php');
+			header('Location: '.$_SERVER['PHP_SELF']); die;
 		}
 	}
 
 	if(isset($_GET['mg'])){
 		mg::agregar($_GET['CodPost'], $_SESSION['CodUsua']);
 		notificaciones::agregar(false, $_GET['CodPost'], $_SESSION['CodUsua']);
-		header('location: index.php');
+		header('Location: '.$_SERVER['PHP_SELF']); die;
 	}
 	require('publicacion.php');
 ?>

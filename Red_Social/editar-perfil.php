@@ -35,20 +35,21 @@
 	</head>
 	
 	<body>
-		<div class="contenedor-form">
-			<h1>Editar Perfil</h1>
-			<form action="<?php echo $_SERVER['PHP_SELF']?>" enctype="multipart/form-data" method="post">
-				<input type="text" name="nombre" id="nombre" class="input-control" value="<?php echo $usuario[0]['nombre']; ?>">
-				<input type="text" name="usuario" id="usuario" class="input-control" value="<?php echo $usuario[0]['usuario']; ?>">
-				<input type="text" name="profesion" id="profesion" class="input-control" value="<?php echo $usuario[0]['profesion']; ?>">
-				<input type="text" name="pais" id="pais" class="input-control" value="<?php echo $usuario[0]['pais']; ?>">
-				<input type="file" name="foto" id="foto">
-				<input type="submit" value="Editar" name="editar" class="log-btn">
-			</form>
-			<div class="registrar">
-				<a href="perfil.php?CodUsua=<?php echo $_SESSION['CodUsua'] ?>">Volver al perfil</a>
+		<div align="center" class="contenedor">
+			<div class="contenedor-login">
+				<h1>Editar Perfil</h1>
+				<form action="<?php echo $_SERVER['PHP_SELF']?>" enctype="multipart/form-data" method="post">
+					<input type="text" name="nombre" id="nombre" class="input-control" value="<?php echo $usuario[0]['nombre']; ?>">
+					<input type="text" name="usuario" id="usuario" class="input-control" value="<?php echo $usuario[0]['usuario']; ?>">
+					<input type="text" name="profesion" id="profesion" class="input-control" value="<?php echo $usuario[0]['profesion']; ?>">
+					<input type="text" name="pais" id="pais" class="input-control" value="<?php echo $usuario[0]['pais']; ?>">
+					<input type="file" name="foto" id="foto">
+					<input type="submit" value="Editar" name="editar" class="log-btn">
+				</form>
+				<div class="registrar">
+					<a href="perfil.php?CodUsua=<?php echo $_SESSION['CodUsua'] ?>">Volver al perfil</a>
+				</div>
 			</div>
-
-		</div>
+		</div>	
 	</body>
 </html>

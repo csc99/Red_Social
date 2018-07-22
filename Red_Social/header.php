@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Red Social</title>
+		<title>ShareCar | <?php echo $_SESSION['nombre'] ?></title>
+		<link rel="stylesheet" type="text/css" href="css/header.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="icomoon/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<header>
-			<h1 class="titulo">Red Social</h1>
+			<h1 class="titulo"><a href="index.php"><span class="icon-road"></span> ShareCar</a></h1>
 
 			<form action = "buscar.php" method = "get" id = "buscar">
 				<input type="text" name="busqueda" placeholder = "Buscar amigos">
 			</form>
 			<nav>
 				<ul>
-					<li><a href="index.php">Inicio</a></li>
 					<li id="info-solicitud">
 						<?php $soli = amigos::solicitudes($_SESSION['CodUsua']); ?>
 						<a href="#"><span class="icon-users"></span>
@@ -64,7 +67,7 @@
 					</li>
 
 					<li class="info_usuario">
-						<a href="#"><?php echo $_SESSION['nombre'];?></a>
+						<a href="#"><span class="icon-user"></span></a>
 						<ul id="nav-perfil">
 							<li><a href="perfil.php?CodUsua=<?php echo $_SESSION['CodUsua'];?>">Perfil</a></li>
 							<li><a href="cerrar.php">Cerrar</a></li>

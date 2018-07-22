@@ -44,15 +44,16 @@
 ?>
 
 
-		<div id="perfil">
+		<div class="perfil">
 			<ul>
 				<li><img src="<?php echo $usuario[0]['foto_perfil'];?>" id="img"></li>
 				<li>
-					<h3><?php echo $usuario[0]['nombre'] ?></h3>
+					<h3 class="nombre"><?php echo $usuario[0]['usuario'] ?></h3>
 					<ul>
-						<li>Edad: <span><?php echo $usuario[0]['edad'] ?></span></li>
-						<li>Profesión: <span><?php echo $usuario[0]['profesion'] ?></span></li>
-						<li>País: <span><?php echo $usuario[0]['pais'] ?></span></li>
+						<li class="nombre-descripcion"><?php echo $usuario[0]['nombre'] ?></li>
+						<li><?php echo $usuario[0]['edad'] ?></li>
+						<li><?php echo $usuario[0]['profesion'] ?></li>
+						<li><?php echo $usuario[0]['pais'] ?></li>
 						<li>Amigos: 
 							<span>
 								<?php if(!empty(amigos::cantidad_amigos($_GET['CodUsua'])))
@@ -64,7 +65,7 @@
 						</li>
 					</ul>
 				</li>
-				<?php if( $_GET['CodUsua'] != $_SESSION['CodUsua'] ): ?>
+				<?php if($_GET['CodUsua'] != $_SESSION['CodUsua'] ): ?>
 					<?php if(empty($verificar_amigos)): //No son amigos?>
 						<li><a href="perfil.php?CodUsua=<?php echo $_GET['CodUsua'] ?>&&agregar=<?php echo $_GET['CodUsua'];?>">Agregar</a></li>
 					<?php elseif($verificar_amigos[0]['status'] == true)://Son amigos ?>
@@ -73,11 +74,10 @@
 						<li><a href="#">Solicitud enviada</a></li>
 					<?php endif; ?>
 				<?php else://Propietario del perfil ?>
-					<li><a href="editar-perfil.php">Editar</a></li>
+					<li><a href="editar-perfil.php" >Editar</a></li>
 				<?php endif; ?>
 			</ul>
 		</div>
-
 		<?php require('publicacion.php'); ?>
 	</body>
 </html>

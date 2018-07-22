@@ -8,10 +8,13 @@
 }
 
 body{
-	font-family: "Arial", verdana;
-	background: #ccc;
+	font-family: sans-serif;
+	background: #E4E4E4 !important;
 }
-
+a{
+	text-decoration: none !important;
+	color: #000 !important;
+}
 
 /********************************************************************************
 ***************************   CABECERA    ***************************************
@@ -19,43 +22,47 @@ body{
 
 
 header{
-	/*position: fixed;
-	top: 0;*/
+	padding-bottom: 300px;
 	box-sizing: border-box;
 	width: 100%;
-	background: #2c3e50 ;   /*#2c3e50*/
-	padding: 2px;
-	padding: 1% 1%;
-	color: #fff;
-	 /*z-index: 100;*/
+	background: #fff;
+	padding: 25px;
+	color: #000;
+	border-bottom: 1px solid #D4D5D4;
 
 }
+header a{
+	text-decoration: none;
+	color: #000;
+}
 
-header  .titulo{
+header .titulo{
 	display: inline-block;
-	
-
 }
 
 nav{
-	/*display: inline-block;*/
 	margin-right: 40px;
 	float: right;
+	padding-right: 100px;
+
 }
 
 #buscar{
 	display: inline-block;
-	width: 20%;
-	margin-left: 110px;
+	width: 300px;
 }
 
 #buscar input{
+	text-align: center;
+	background-color: rgb(250, 250, 250);
+	font-size: 12px;
+	font-weight: 100;
 	width: 100%;
 	height: 30px;
-	border-radius: 5px;
+	border-radius: 2px;
 	border-style: none;
-	font-size: 17px;
-	text-align: center;
+	border: 1px solid #D4D5D4;
+	margin-left: 300px;
 }
 
 #buscar input:focus{
@@ -70,12 +77,11 @@ nav > ul > li{
 
 nav ul li a{
 	display: block;
-	/*margin-top: 5px;*/
-	padding: 10px;
+	padding: 18px;
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 	border-radius: 5px;
-	font-size: 17px;   /*10px 5px 7px 5px*/
+	font-size: 17px;
 	font-weight: bold;
 }
 
@@ -83,10 +89,10 @@ nav ul li a span{
 	font-size: 17px;
 }
 
-nav ul li a:hover{
-	background: #EFEFFB;
+/*nav ul li a:hover{
+	background: rgb(250, 250, 250);
 	color: #000;
-}
+}*/
 
 
 
@@ -245,19 +251,17 @@ header nav #info-notificaciones:hover #nav-notificaciones{
 ******************************************************/
 
 
-#perfil{
-	margin: 10px auto;
-	/*background: #fff;*/
-	width: 90%;
+.perfil{
+	margin: 20px auto;
+	width: 900px;
 	overflow: hidden;
-	border-radius: 70px;
 }
 
-#perfil > ul li{
+.perfil > ul li{
 	list-style: none;
 }
 
-#perfil > ul > li{
+.perfil > ul > li{
 	float: left;
 	box-sizing: border-box;
 	padding: 2% 3%;
@@ -265,32 +269,35 @@ header nav #info-notificaciones:hover #nav-notificaciones{
 	
 }
 
-#perfil > ul > li > ul li{
+.perfil > ul > li > ul li{
 	list-style: none;
 	margin-top: 20px;
 	margin-left: 10px;
 }
 
-#perfil #img{
-	width: 150px;
-	border-radius: 80px;
+.perfil #img{
+	width: 200px;
+	border-radius: 100px;
 }
 
 
-#perfil > ul li a{
-	padding: 2% 3%;
-	background: #2c3e50; /* #1caff6*/
-	color: #fff;
+.perfil > ul li a{
+	padding: 5px;
+	border: 1px solid #D4D5D4;
+	color: #000;
 	border-radius: 5px;
-	font-weight: bold;
+	font-weight: 100;
+	font-size: 15px;
 	text-decoration: none;
 }
 
-#perfil > ul li >span{
-	padding: 3px;
-	background: #1caff6;
-	color: #fff;
-	margin-left: 10px;
+
+.perfil .nombre{
+	font-size: 30px;
+	font-weight: 100;
+}
+.perfil .nombre-descripcion{
+	font-weight: 600;
 }
 
 
@@ -598,6 +605,10 @@ section .publicaciones{
 	font-weight: lighter;
 	font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif;
 }
+#like a{
+	color: #000;
+	text-decoration: none;
+}
 
 
 
@@ -666,16 +677,16 @@ section .publicaciones{
 
 
 .subir{
-	width: 35%;
+	width: 500px;
 	background: #fff;
 	margin: auto;
-	border-radius: 10px;
-	margin-top: 5px;
+	border: 1px solid #D4D5D4;
+	margin-top: 10px;
 }
 
 
 .subir form{
-	border-top: 1px solid #2c3e50;	
+	border-top: 1px solid #D4D5D4;	
 }
 
 .subir #contenido{
@@ -695,8 +706,8 @@ section .publicaciones{
 
 
 .boton-subir{
-   background: #2c3e50;
-   width: 20px;
+	background: #2c3e50;
+	width: 35px ;
 	color: #fff;
 	padding: 5px 10px;
 	border-radius: 5px;
@@ -705,8 +716,8 @@ section .publicaciones{
 
 
 .boton-subir:hover{
-	   background: #fff;
-	   color: #2c3e50;
+	background: #fff; 
+	color: #2c3e50;
 }
 
 
@@ -719,11 +730,12 @@ section .publicaciones{
 	width: 40%;
 	margin: auto;
 	margin-top: 10px;
+
 	}
 
 .resultados-busqueda .usuarios{
 
-	background: #fff;
+	background: grey;
 	width: 95%;
 	margin: auto;
 	margin-top: 10px;
@@ -760,10 +772,6 @@ section .publicaciones{
 
 
 .resultados-busqueda h1{
-	margin-top: 200px;
-}
-.no-resultados{
-	margin-left: 30%;
 	margin-top: 200px;
 }
 

@@ -27,10 +27,13 @@
 		$tam = count($datos);
 		for($i=0; $i<$tam; $i++){
 			if($i != 2){
-				//Limpiar datos de espacios, etc.
-				$datos[$i] = htmlspecialchars($datos[$i]);
-				$datos[$i] = trim($datos[$i]);
-				$datos[$i] = stripcslashes($datos[$i]);
+				if(isset($datos[$i])){
+					//Limpiar datos de espacios, etc.
+					$datos[$i] = htmlspecialchars($datos[$i]);
+					$datos[$i] = trim($datos[$i]);
+					$datos[$i] = stripcslashes($datos[$i]);
+				}
+				
 			}//end if
 		}//end for
 		return $datos;
@@ -39,6 +42,7 @@
 	function verificar_session(){
 		if(!isset($_SESSION['CodUsua'])){
 			header('location: login.php');
+			return false;
 		}//end if
 	}//end function
 ?>

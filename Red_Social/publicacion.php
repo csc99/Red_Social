@@ -16,7 +16,14 @@
 						<div class="publi-thumb">
 							<img src="<?php echo $posts['img']; ?>" alt="">
 						</div>
-						<p id="like"><?php echo mg::mostrar($posts['CodPost'])[0][0]; ?><span class="icon-heart"></span></p>
+						<p id="like"><?php echo mg::mostrar($posts['CodPost'])[0][0]; ?>
+							<?php 
+							if(mg::verificar_mg($posts['CodPost'], $_SESSION['CodUsua']) == 0): ?>
+								<a href="<?php echo $_SERVER['PHP_SELF']?>?mg=1&&CodPost=<?php echo $posts['CodPost']?>" class="icon-heart"></a>
+							<?php else: ?>
+								<a href="<?php echo $_SERVER['PHP_SELF']?>?mg=1&&CodPost=<?php echo $posts['CodPost']?>" class="icon-heart"></a>
+							<?php endif;?>
+						</p>
 						<div id="mostrar-comentarios">
 							<?php $comentario = comentarios::mostrar($posts['CodPost']); ?>
 							<?php if(!empty($comentario)):  ?>
@@ -26,11 +33,7 @@
 							<?php endif; ?>
 						</div>	
 						<div class="publi-contene-like">
-							<?php if(mg::verificar_mg($posts['CodPost'], $_SESSION['CodUsua']) == 0): ?>
-								<a href="<?php echo $_SERVER['PHP_SELF']?>?mg=1&&CodPost=<?php echo $posts['CodPost']?>" class="like icon-checkmark2"></a>
-							<?php else: ?>
-								<a href="<?php echo $_SERVER['PHP_SELF']?>?mg=1&&CodPost=<?php echo $posts['CodPost']?>" class="like icon-checkmark"></a>
-							<?php endif; ?>
+							
 							<form action="<?php echo $_SERVER['PHP_SELF']?>" class="comentario" method="post">
 								<input type="text" name="comentario" id="comentario" placeholder="Comenta algo...">
 								<input type="hidden" name="CodPost" id="CodPost" placeholder="Comenta algo..." value="<?php echo $posts['CodPost']; ?>">
